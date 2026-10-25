@@ -182,8 +182,8 @@ io.on('connection', (socket) => {
   });
 });
 
-app.use(express.static(path.join(__dirname, 'public')));
-app.use((req, res) => { res.sendFile(path.join(__dirname, 'public', 'index.html')); });
+app.use(express.static(__dirname));
+app.use((req, res) => { res.sendFile(path.join(__dirname, 'index.html')); });
 
 const PORT = process.env.PORT || 3000;
 server.listen(PORT, () => { console.log(`Сервер запущен на http://localhost:${PORT}`); });
